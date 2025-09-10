@@ -1,0 +1,146 @@
+/* Universal and Navbar Styles (unchanged from your original) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+.ttl{
+  font-size: medium;
+}
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+body {
+  background-color: #0b0e1b;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Navbar (unchanged) */
+.navbar {
+  background-color: #0b0e1b;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2c2f45;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: white;
+}
+
+.profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+/* --- Centering ONLY the main content --- */
+.main-content-container {
+  max-width: 800px;
+  width: 100%; /* Ensures it takes full width up to the max-width */
+  margin: 2rem auto; /* This is the key for horizontal centering */
+}
+
+.form-header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Form Styles (unchanged) */
+.form {
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+input, select {
+  padding: 0.7rem 1rem;
+  background-color: #141722;
+  border: 1px solid #2c2f45;
+  color: white;
+  border-radius: 8px;
+}
+
+input[type="file"] {
+  padding: 0.6rem;
+}
+
+.submit-btn {
+  text-align: right;
+}
+
+.submit-btn input[type="button"] {
+  background-color: #3e63f1;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn input[type="button"]:hover {
+  background-color: #2f4fd0;
+}

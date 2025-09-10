@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Tracker</title>
+    <link rel="stylesheet" href="internship-type.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Internship Tracker</div>
+      <ul class="nav-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Students</a></li>
+        <li><a href="#">Settings</a></li>
+        <li>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtn_9DLMIPc7NNmhysOUQaqRdCV6dbS2Bj0A&s"
+            alt="Profile"
+            class="profile-pic"
+          />
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1>Internship Type</h1>
+
+      <form id="internshipTypeForm">
+        <div class="radio-option">
+          <label>
+            <input type="radio" name="type" value="on-campus" />
+            <span></span>
+            <div class="radio-box">
+              <strong>On-Campus</strong>
+              <p>Select your interning lab</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="radio-option">
+          <label>
+            <input type="radio" name="type" value="off-campus" />
+            <span></span>
+            <div class="radio-box">
+              <strong>Off-Campus</strong>
+              <p>
+                Enter the name of the organization (VKN, educational institute,
+                or government body) where you are interning.
+              </p>
+            </div>
+          </label>
+        </div>
+
+        <button type="submit">Next</button>
+      </form>
+    </main>
+
+    <script>
+      document
+        .getElementById("internshipTypeForm")
+        .addEventListener("submit", function (e) {
+          // Prevent the form from submitting by default
+          e.preventDefault();
+
+          // Find the selected radio button
+          const selected = document.querySelector('input[name="type"]:checked');
+
+          // Check if an option was selected
+          if (selected) {
+            // Get the value of the selected option
+            const selectedValue = selected.value;
+
+            // Redirect based on the value
+            if (selectedValue === "on-campus") {
+              window.location.href = "oncampus.html";
+            } else if (selectedValue === "off-campus") {
+              window.location.href = "off-campus.html";
+            }
+          } else {
+            // Alert the user if no option is selected
+            alert("Please select an internship type before continuing.");
+          }
+        });
+    </script>
+  </body>
+</html>

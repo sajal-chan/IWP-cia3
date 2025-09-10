@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Type</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d0f24;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #0d0f24;
+    }
+
+    .navbar .logo {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background-color: #14162b;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      border: 1px solid #2b2f4c;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: #1e2238;
+    }
+
+    .option input {
+      margin-right: 15px;
+      margin-top: 5px;
+    }
+
+    .option label {
+      display: block;
+    }
+
+    .option strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .btn {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      background-color: #3a66ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #2d4dcc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Internship Tracker</div>
+    <div class="menu">
+      <a href="#">Dashboard</a>
+      <a href="#">Reports</a>
+      <a href="#">Students</a>
+      <a href="#">Settings</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Internship Type</h2>
+
+    <form>
+      <div class="option">
+        <input type="radio" id="onCampus" name="internshipType" value="On-Campus">
+        <label for="onCampus">
+          <strong>On-Campus</strong>
+          <span>Select your interning lab</span>
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" id="offCampus" name="internshipType" value="Off-Campus">
+        <label for="offCampus">
+          <strong>Off-Campus</strong>
+          <span>Enter the name of the organization (VKN, educational institute, or government body) where you are interning.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Next</button>
+    </form>
+  </div>
+</body>
+</html>

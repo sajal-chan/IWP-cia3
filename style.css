@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b0d1d;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #0b0d1d;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin: 20px 0 5px;
+}
+
+form p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #ccc;
+}
+
+/* Transparent checkbox label */
+.checkbox {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}
+
+.checkbox label {
+  color: rgba(255, 255, 255, 0.6); /* Transparent text */
+}
+
+/* Right-aligned submit button */
+form button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  float: right; /* Move to right */
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #2563eb;
+}

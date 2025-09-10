@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b0d1d;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #0b0d1d;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* RADIO STYLES */
+.radio-option {
+  position: relative;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-option label {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: border 0.3s, background 0.3s;
+}
+
+.radio-option input[type="radio"] + span {
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-top: 4px;
+}
+
+.radio-option input[type="radio"]:checked + span {
+  border-color: #3b82f6;
+  background-color: #3b82f6;
+}
+
+.radio-option input[type="radio"]:checked + span::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.radio-box {
+  flex: 1;
+}
+
+.radio-box strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.radio-box p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+  align-self: flex-end;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}

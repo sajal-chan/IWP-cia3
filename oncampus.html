@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title class="ttl">On-Campus Internship Report</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0e1b;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #0b0d1d;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+.logo {
+  font-weight: bold;
+  color: white;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+}
+.form-header h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.form {
+  max-width: 600px;
+  width: 100%;
+  background-color: #141722;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.field {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.row .field {
+  margin-bottom: 0;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #a0a0a0;
+}
+input, select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2c2f45;
+  background-color: #1a1d2d;
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: #3a66ff;
+  box-shadow: 0 0 0 2px rgba(58, 102, 255, 0.3);
+}
+input[type="file"] {
+  padding: 0.6rem;
+}
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3a66ff;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background-color: #2d4dcc;
+  transform: translateY(-2px);
+}
+.btn:active {
+  background-color: #1a338c;
+  transform: translateY(0);
+}
+.submit-btn {
+  margin-top: 2rem;
+}
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2c2f45;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: none;
+  text-align: center;
+  color: #fff;
+}
+.message-box.show {
+  display: block;
+}
+.message-box button {
+  background-color: #3a66ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">Internship Tracker</div>
+<ul class="nav-links">
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">Reports</a></li>
+<li><a href="#">Students</a></li>
+<li><a href="#">Settings</a></li>
+<li>
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtn_9DLMIPc7NNmhysOUQaqRdCV6dbS2Bj0A&s"
+alt="Profile"
+class="profile-pic"
+/>
+</li>
+</ul>
+</nav>
+<div class="main-content-container">
+<header class="form-header">
+<h1>On-Campus Internship Report</h1>
+</header>
+<form class="form" id="internshipForm">
+<!-- Hidden field to set organization type -->
+<input type="hidden" name="orgType" value="On-Campus" />
+
+<!-- Required fields that your backend expects -->
+<div class="field">
+<label for="companyName">Organization Name</label>
+<input type="text" id="companyName" name="companyName" placeholder="Enter Organization Name" required />
+</div>
+
+<div class="field">
+<label for="companyAddress">Organization Address</label>
+<input type="text" id="companyAddress" name="companyAddress" placeholder="Enter Address" required />
+</div>
+
+<div class="field">
+<label for="industry">Industry/Field</label>
+<input type="text" id="industry" name="industry" placeholder="Enter Industry/Field" required />
+</div>
+
+<div class="row">
+<div class="field">
+<label for="department">Department</label>
+<select id="department" name="department" required>
+<option value="">Select Department</option>
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+<option value="EEE">EEE</option>
+<option value="MECH">MECH</option>
+</select>
+</div>
+<div class="field">
+<label for="guide">Guide Name</label>
+<input type="text" id="guide" name="guide" placeholder="Guide name" required />
+</div>
+</div>
+
+<div class="field">
+<label for="pocName">Point of Contact Name</label>
+<input type="text" id="pocName" name="pocName" placeholder="Enter Name" required />
+</div>
+
+<div class="field">
+<label for="pocEmail">Point of Contact Email</label>
+<input type="email" id="pocEmail" name="pocEmail" placeholder="Enter Email" required />
+</div>
+
+<div class="field">
+<label for="pocContact">Point of Contact Phone</label>
+<input type="tel" id="pocContact" name="pocContact" placeholder="Enter Phone" required />
+</div>
+
+<div class="field">
+<label for="pocDesignation">POC Designation</label>
+<input type="text" id="pocDesignation" name="pocDesignation" placeholder="Enter Designation" required />
+</div>
+
+<div class="row">
+<div class="field">
+<label for="startDate">Internship Start Date</label>
+<input type="date" id="startDate" name="startDate" required />
+</div>
+<div class="field">
+<label for="endDate">Internship End Date</label>
+<input type="date" id="endDate" name="endDate" required />
+</div>
+</div>
+
+<div class="field">
+<label for="role">Internship Role</label>
+<input type="text" id="role" name="role" placeholder="Enter Role" required />
+</div>
+
+<div class="field">
+<label for="offerLetter">Offer Letter</label>
+<input type="file" id="offerLetter" name="offerLetter" />
+</div>
+
+<div class="submit-btn">
+<button type="submit" class="btn">Submit Report</button>
+</div>
+</form>
+</div>
+
+<!-- Message Box for user feedback -->
+<div id="message-box" class="message-box">
+<p id="message-text"></p>
+<button onclick="document.getElementById('message-box').classList.remove('show');">OK</button>
+</div>
+
+<script>
+const form = document.getElementById('internshipForm');
+const messageBox = document.getElementById('message-box');
+const messageText = document.getElementById('message-text');
+
+function showMessage(message) {
+messageText.textContent = message;
+messageBox.classList.add('show');
+}
+
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+
+// Basic validation
+const department = document.getElementById('department').value;
+if (!department) {
+  showMessage('Please select a department');
+  return;
+}
+
+const formData = new FormData(form);
+
+// Debug: Log what's being sent
+console.log('Form data being sent:');
+for (let [key, value] of formData.entries()) {
+  console.log(key, value);
+}
+
+try {
+  const response = await fetch('http://localhost:3000/api/internships', {
+    method: 'POST',
+    body: formData,
+    mode: 'cors', // Explicitly set CORS mode
+  });
+
+  console.log('Response status:', response.status);
+  
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Error response:', errorText);
+    throw new Error(`HTTP ${response.status}: ${errorText}`);
+  }
+  
+  const data = await response.json();
+  console.log('Response data:', data);
+  
+  if (data.success) {
+    showMessage('Report submitted successfully!');
+    form.reset();
+  } else {
+    showMessage(`Error: ${data.message || 'Something went wrong.'}`);
+  }
+} catch (error) {
+  console.error('Submission error:', error);
+  showMessage(`Failed to submit: ${error.message}`);
+}
+});
+</script>
+</body>
+</html>

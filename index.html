@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Internship Portal</div>
+      <ul class="nav-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Internships</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Profile</a></li>
+        <li>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtn_9DLMIPc7NNmhysOUQaqRdCV6dbS2Bj0A&s"
+            alt="Profile Picture"
+            class="profile-pic"
+          />
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1>Submit Final Internship Report</h1>
+
+      <form id="internshipForm">
+        <label>Final Presentation</label>
+        <p>Upload Presentation</p>
+        <input type="file" name="presentation" />
+
+        <label>Final Internship Report</label>
+        <p>Upload Report</p>
+        <input type="file" name="report" />
+
+        <div class="checkbox">
+          <input type="checkbox" id="confirm" />
+          <label for="confirm"
+            >I confirm that all information provided is accurate and
+            complete.</label
+          >
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

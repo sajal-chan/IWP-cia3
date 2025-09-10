@@ -207,7 +207,7 @@
         <label for="guide">Guide Name</label>
         <input type="text" id="guide" name="guide" placeholder="Enter Guide Name">
 
-        <button type="submit" class="btn">Submit Report</button>
+        <button type="submit" class="btn" onClick="redir()">Submit Report</button>
       </form>
     </div>
   </main>
@@ -219,6 +219,9 @@
   </div>
 
   <script>
+    function redir(){
+      window.location.href="index2.html"
+    }
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 

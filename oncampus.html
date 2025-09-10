@@ -251,7 +251,7 @@ class="profile-pic"
 </div>
 
 <div class="submit-btn">
-<button type="submit" class="btn">Submit Report</button>
+<button type="submit" class="btn" onClick="redir()">Submit Report</button>
 </div>
 </form>
 </div>
@@ -263,6 +263,9 @@ class="profile-pic"
 </div>
 
 <script>
+  function redir(){
+      window.location.href="index2.html"
+    }
 const form = document.getElementById('internshipForm');
 const messageBox = document.getElementById('message-box');
 const messageText = document.getElementById('message-text');

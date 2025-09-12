@@ -12,6 +12,19 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Serve all static files (HTML, CSS, JS, images) from project root
+app.use(express.static(path.join(__dirname)));
+
+// Default route: load index.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 // =================================
 // MIDDLEWARE CONFIGURATION (MUST BE FIRST)
 // =================================

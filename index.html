@@ -99,7 +99,6 @@
 
     <button class="login-btn" onclick="loginAsStudent()">Login as Student</button>
     <button class="login-btn" onclick="loginAsGuide()">Login as Guide</button>
-    <button class="login-btn" onclick="loginAsCoordinator()">Login as Coordinator</button>
   </div>
 
   <script>
@@ -130,8 +129,6 @@
 
       if (!semester) {
         alert("Please select your semester before logging in as a student.");
-      } else {
-        alert("Logging in as Student (Semester: " + semester + "th)");
       }
 
       window.location.href="internship-type.html"
@@ -139,12 +136,7 @@
 
     function loginAsGuide() {
       if (!validateCommonFields()) return;
-      alert("Logging in as Guide");
-    }
-
-    function loginAsCoordinator() {
-      if (!validateCommonFields()) return;
-      alert("Logging in as Coordinator");
+      window.location.href="students.html"
     }
   </script>
 

@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 app.use("/api", require("./internship-type"));
+const studentRoutes = require("./student_routes");
+app.use("/api", studentRoutes);
+
 
 // Start server
 app.listen(PORT, () => {

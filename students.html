@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submitted Students</title>
+  <style>
+    body { font-family: Arial, sans-serif;background-color: #0b0d21; }
+    h1{color:white;}
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f2f2f2; }
+    .navbar {
+      background-color: #0b0d1d;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+    .logo {
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .profile-pic {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">Internship Tracker</div>
+    <ul class="nav-links">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Students</a></li>
+      <li><a href="#">Settings</a></li>
+      <li>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtn_9DLMIPc7NNmhysOUQaqRdCV6dbS2Bj0A&s"
+          alt="Profile"
+          class="profile-pic"
+        />
+      </li>
+    </ul>
+  </nav>
+  <h1>Students Who Submitted</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Submitted At</th>
+      </tr>
+    </thead>
+    <tbody id="student-table"></tbody>
+  </table>
+
+  <script>
+    async function loadStudents() {
+      try {
+        const response = await fetch("/api/students"); // ✅ Backend GET call
+        const students = await response.json();
+
+        const tableBody = document.getElementById("student-table");
+        tableBody.innerHTML = "";
+
+        students.forEach(student => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${student.name}</td>
+            <td>${student.email}</td>
+            <td>${student.course}</td>
+            <td>${new Date(student.submittedAt).toLocaleString()}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (err) {
+        console.error("Error loading students:", err);
+      }
+    }
+
+    loadStudents();
+  </script>
+</body>
+</html>
